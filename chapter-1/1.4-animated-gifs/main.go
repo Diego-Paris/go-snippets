@@ -74,12 +74,15 @@ func lissajous(out io.Writer) {
 		//Paletted image with the given width, height of the rect and palette
 		img := image.NewPaletted(rect, palette)
 
+		// randomly chooses a color from the palette for frame
+		frameColor := uint8(rand.Intn(len(palette)-1) + 1)
+
 		//Calculate each pixel of the oscillation in this current frame
 		for t := 0.0; t < cycles*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5),
-				uint8(rand.Intn(len(palette)-1)+1))
+				frameColor)
 		}
 
 		// adds 0.1 to phase
