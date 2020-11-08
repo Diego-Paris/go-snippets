@@ -14,6 +14,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -21,7 +22,13 @@ func main() {
 
 	// iterates through each url given
 	for _, url := range os.Args[1:] {
-		
+
+		// if url doesnt start with http:// or https:// add prexif
+		if !strings.HasPrefix(url, "http://") && !strings.HasPrefix(url, "https://") {
+			fmt.Println("added prefix")
+			url = "http://" + url
+		}
+
 		// sends a get request to the url and returns the result in a response struct resp
 		resp, err := http.Get(url)
 
@@ -52,5 +59,15 @@ func main() {
 
 		//? if using io.Copy()
 		fmt.Printf("%v\n", b)
+
+		// Printing the response status:
+		// Status     string // e.g. "200 OK"
+    // StatusCode int    // e.g. 200
+    // Proto      string // e.g. "HTTP/1.0"
+    // ProtoMajor int    // e.g. 1
+    // ProtoMinor int    // e.g. 0
+
+		fmt.Printf("Response status code: %v\n", resp.Status)
+		fmt.Printf("Response protocol: %v\n", resp.Proto)
 	}
 }

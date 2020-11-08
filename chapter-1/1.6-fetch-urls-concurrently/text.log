@@ -1,0 +1,14 @@
+hello
+text to append
+0.54s     7490  http://godoc.org  200 OK
+0.86s   567191  http://youtube.com  200 OK
+1.01s     4154  http://gopl.io  200 OK
+1.01s elapsed
+
+
+0.31s     7490  http://godoc.org  200 OK
+0.67s   423805  http://youtube.com  200 OK
+0.79s     4154  http://gopl.io  200 OK
+0.79s elapsed
+
+
