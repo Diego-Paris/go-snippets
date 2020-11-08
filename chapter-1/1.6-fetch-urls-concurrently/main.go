@@ -58,6 +58,8 @@ func fetch(url string, ch chan<- string) {
 		return
 	}
 
+	// reads the body and copies it to the ioutil.Discard stream
+	// Discard is an io.Writer on which all Write calls succeed without doing anything
 	nbytes, err := io.Copy(ioutil.Discard, resp.Body) // Reads the body in one go
 	resp.Body.Close()                                 // Don't leak resources
 
