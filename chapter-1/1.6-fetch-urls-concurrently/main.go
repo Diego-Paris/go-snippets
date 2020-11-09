@@ -1,3 +1,18 @@
+/*
+Fetches a get request through each URL concurrently.
+The execution time of the program is equal only to
+the longest request amongst all the fetches, instead
+of being the sum of each fetch time
+
+Example:
+$ go run main.go http://gopl.io http://godoc.org http://youtube.com
+> 0.54s     7490  http://godoc.org  200 OK
+> 0.86s   567191  http://youtube.com  200 OK
+> 1.01s     4154  http://gopl.io  200 OK
+> 1.01s elapsed 
+
+Note: Returns the html from the website, the GET response
+*/
 package main
 
 import (
