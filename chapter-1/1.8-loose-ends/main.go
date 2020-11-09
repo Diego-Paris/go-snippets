@@ -1,11 +1,25 @@
+/*
+Briefly covers other topics not mentioned in
+the previous chapters, such as 
+
+Control flow: switch statements
+Named types: structs
+Pointers: &addresses and *dereferencing
+Methods: a function associated with a name type
+Interface: abstract types that let us treat different
+types in the same way based on the methods they have
+Packages: Go has an extensive standard library, before
+embarking on a new project find already existing packages
+that can help get the job done more easily
+> https://golang.org/pkg    // for standard library
+> https://godoc.org					// contributed by community
+Comments: comments do not nest
+*/
 package main
 
 import (
 	"fmt"
 )
-
-//
-
 
 // Point this is a point
 type Point struct {
