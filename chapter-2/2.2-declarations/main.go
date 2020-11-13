@@ -1,5 +1,8 @@
 package main
-
+/*
+A basic demonstration of variables, package-level constants,
+functions and simple logic
+*/
 import (
 	"fmt"
 )
