@@ -74,4 +74,9 @@ func main() {
 
 	//? two pointers are the same if and only if they 
 	//? point to the same variable
+
+	n := new(int) // creates a new variable
+	// of that type and returns the pointer to it
+
+	fmt.Println(*n)
 }
