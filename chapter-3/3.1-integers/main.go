@@ -18,7 +18,7 @@ func main() {
 		int8
 		int16
 		int32
-		in64
+		int64
 	*/
 	// and their unsigned versions
 	/*
