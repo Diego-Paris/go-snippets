@@ -17,9 +17,7 @@ func main() {
 
 	// Print elements only
 	for _, v := range a {
-		fmt.Printf("v = %v\n", v)	
+		fmt.Printf("v = %v\n", v)
 	}
-
-	
 
 }
